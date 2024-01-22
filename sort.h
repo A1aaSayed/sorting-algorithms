@@ -6,6 +6,5 @@
 #include <stdbool.h>
 
 void bubble_sort(int *array, size_t size);
-void swap(int *arr, int i, int j);
 
 #endif

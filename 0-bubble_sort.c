@@ -7,30 +7,27 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j;
+	size_t i, j, temp;
+	int swaped;
+
+	if (array == NULL || size < 2)
+		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
+		swaped = 0;
 		for (j = 0; j < size - i - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
-				swap(array, j, j + 1);
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+				swaped = 1;
 				print_array(array, size);
 			}
 		}
+		if (!swaped)
+			break;
 	}
-}
-
-/**
- * swap - swap function
- * @arr: array
- * @i: first element
- * @j: second element
-*/
-void swap(int *arr, int i, int j)
-{
-	int temp = arr[i];
-
-	arr[i] = arr[j];
 }
