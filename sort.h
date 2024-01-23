@@ -28,6 +28,7 @@ void swap_nodes(listint_t **list, listint_t *current, listint_t *prev_node);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void swap(int *i, int *j);
+void merge_sort(int *array, size_t size);
 
 
 #endif
