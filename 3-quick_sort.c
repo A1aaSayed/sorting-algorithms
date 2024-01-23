@@ -22,9 +22,9 @@ void swap(int *i, int *j)
 */
 int partition(int *array, int low, int high, size_t size)
 {
-	int pivot = array[high];
-	int i = low, j;
+	int pivot = array[high], i, j;
 
+	i = low;
 	for (j = low; j < high; j++)
 	{
 		if (array[j] < pivot)
@@ -49,9 +49,7 @@ void quick_sort_recursive(int *array, int low, int high, size_t size)
 {
 	if (low < high)
 	{
-		int partition_index = partition(array, low, high, size);
-
-		print_array(array + low, high - low + 1);
+		size_t partition_index = partition(array, low, high, size);
 
 		quick_sort_recursive(array, low, partition_index - 1, size);
 		quick_sort_recursive(array, partition_index + 1, high, size);
