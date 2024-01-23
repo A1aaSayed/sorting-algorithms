@@ -7,15 +7,7 @@
 */
 void merge_sort(int *array, size_t size)
 {
-	size_t mid;
-
-	if (size > 1)
-	{
-		mid = size / 2;
-		merge_sort(array, mid);
-		merge_sort(array + mid, size - mid);
-		merge(array, mid, size - mid);
-	}
+	merge_sort_array(array, size);
 }
 
 /**
@@ -55,4 +47,22 @@ void merge(int *array, size_t left, size_t right)
 
 	print_array(array, size);
 	free(temp);
+}
+
+/**
+ * merge_sort_array - Applies the merge sort algorithm to the array
+ * @array: pointer to array of integers
+ * @size: the size of the array
+*/
+void merge_sort_array(int *array, size_t size)
+{
+	size_t mid;
+
+	if (size > 1)
+	{
+		mid = size / 2;
+		merge_sort_array(array, mid);
+		merge_sort_array(array + mid, size - mid);
+		merge(array, mid, size - mid);
+	}
 }
