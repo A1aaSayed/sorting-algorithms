@@ -45,7 +45,7 @@ int partition(int *array, size_t low, size_t high, size_t size)
  * @high: ending index
  * @size: the size of the array
 */
-void quick_sort_recursive(int *array, size_t low, size_t high, size_t size)
+void quick_sort_recursive(int *array, int low, int high, size_t size)
 {
 	if (low < high)
 	{
