@@ -20,11 +20,12 @@ void swap(int *i, int *j)
  * @size: size of the array
  * Return: The index of the pivot after partitioning
 */
-int partition(int *array, int low, int high, size_t size)
+int partition(int *array, size_t low, size_t high, size_t size)
 {
 	int pivot = array[high], i, j;
 
-	for (i = j = low; j < high; j++)
+	i = low;
+	for (j = low; j < high; j++)
 	{
 		if (array[j] < pivot)
 		{
@@ -44,7 +45,7 @@ int partition(int *array, int low, int high, size_t size)
  * @high: ending index
  * @size: the size of the array
 */
-void quick_sort_recursive(int *array, int low, int high, size_t size)
+void quick_sort_recursive(int *array, size_t low, size_t high, size_t size)
 {
 	if (low < high)
 	{
