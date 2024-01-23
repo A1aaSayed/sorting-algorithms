@@ -20,7 +20,7 @@ void swap(int *i, int *j)
  * @size: size of the array
  * Return: The index of the pivot after partitioning
 */
-int partition(int *array, size_t low, size_t high, size_t size)
+int partition(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high], i, j;
 
