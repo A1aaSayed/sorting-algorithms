@@ -22,12 +22,16 @@ void merge(int *array, size_t left, size_t right)
 	int *temp = malloc(size * sizeof(int));
 
 	if (!temp)
-	{
 		exit(EXIT_FAILURE);
-	}
 	i = 0;
 	j = left;
 	k = 0;
+
+	printf("\nMerging...\n");
+	printf("[left]: ");
+	print_array(array, left);
+	printf("[right]: ");
+	print_array(array + left, right);
 
 	while (i < left && j < size)
 	{
@@ -45,6 +49,7 @@ void merge(int *array, size_t left, size_t right)
 	for (size_t z = 0; z < size; ++z)
 		array[z] = temp[z];
 
+	printf("[Done]: ");
 	print_array(array, size);
 	free(temp);
 }
@@ -65,4 +70,17 @@ void merge_sort_array(int *array, size_t size)
 		merge_sort_array(array + mid, size - mid);
 		merge(array, mid, size - mid);
 	}
+}
+
+int main(void)
+{
+    int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
+    size_t n = sizeof(array) / sizeof(array[0]);
+
+    print_array(array, n);
+    printf("\n");
+    merge_sort(array, n);
+    printf("\n");
+    print_array(array, n);
+    return (0);
 }
